@@ -1,0 +1,81 @@
+<template>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top main__nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <b>PHIMMOIZZ</b>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Phim mới</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Phim chiếu rạp</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="&#xF002; Tìm phim, diễn viên,..." aria-label="Search" id="searchInput" v-model="search">
+                <button class="btn text-white" type="submit" id="searchButton"><i class="fas fa-search"></i></button>
+            </form>
+            <ul class="ml-auto navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Đăng nhập</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tạo tài khoản</a>
+                </li>
+            </ul>
+            
+            </div>
+        </div>
+    </nav>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            search: ""
+        }
+    },
+}
+
+</script>
+<style scoped>
+.main__nav {
+    padding: 13px;
+    background-color: rgb(20, 20, 20);
+}
+.nav-link {
+    color: #fff;
+}
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+}
+.navbar-brand {
+    color: red;
+}
+.form-control {
+    border-radius: 0%;
+    width: 260px;
+    padding-left: 0.5em;
+    border: 1px solid #fff;
+    background-color: white;
+}
+</style>

@@ -1,0 +1,8 @@
+body {
+  background-color: rgb(20, 20, 20);
+  color: #fff;
+}
+.main__body {
+  max-width: 1200px;
+  padding-top: 4.4em;
+}

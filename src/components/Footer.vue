@@ -2,7 +2,7 @@
     <div class="card mt-3 main__footer">
         <div class="card-body">
             <div class="text-center">
-                2023 PHIMMOIZZ
+                2023 DATFLIX
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top main__nav">
         <div class="container-fluid">
             <router-link class="navbar-brand" to="/">
-                <b>PHIMMOIZZ</b>
+                <b>DATFLIX</b>
             </router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -81,7 +81,7 @@ export default {
             this.logged = false
             this.user = null
             this.$swal({
-                title: "Đã đăng xuất khỏi PHIMMOIZZ",
+                title: "Đã đăng xuất khỏi DATFLIX",
                 icon: "success",
                 showConfirmButton: true,
             })

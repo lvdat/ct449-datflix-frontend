@@ -24,7 +24,7 @@ export default {
     $route: {
       immediate: true,
       handler (to, from) {
-        document.title = to.meta.title + ' - PHIMMOIZZ' || 'PHIMMOIZZ - Xem phim online miễn phí'
+        document.title = to.meta.title + ' - DATFLIX' || 'DATFLIX - Xem phim online miễn phí'
       }
     }
   }

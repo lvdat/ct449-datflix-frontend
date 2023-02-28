@@ -10,6 +10,9 @@
         <div class="col-md-5">
             <div class="card">
                 <div class="card-body">
+                    <div class="alert alert-danger" role="alert" v-if="error">
+                        {{ error }}
+                    </div>
                     <form>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Tên người dùng</label>
@@ -28,3 +31,26 @@
         </div> 
     </div>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            username: '',
+            password: '',
+            error: '',
+        }
+    },
+    methods: {
+        login() {
+            this.$store.dispatch('login', {
+                username: this.username,
+                password: this.password,
+            }).then(() => {
+                this.$router.push({ name: 'home' })
+            }).catch((error) => {
+                this.error = error
+            })
+        }
+    }
+}
+</script>

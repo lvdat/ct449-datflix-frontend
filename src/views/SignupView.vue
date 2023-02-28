@@ -10,6 +10,9 @@
         <div class="col-md-5">
             <div class="card">
                 <div class="card-body">
+                    <div class="alert alert-danger" role="alert" v-if="error">
+                        {{ error }}
+                    </div>
                     <form>
                         <div class="mb-3">
                             <label for="username" class="form-label">Tên người dùng</label>
@@ -37,4 +40,13 @@
     </div>
 </template>
 <script>
+export default {
+    data() {
+        return {
+            username: '',
+            password: '',
+            error: '',
+        }
+    },
+}
 </script>

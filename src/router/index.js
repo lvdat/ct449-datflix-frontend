@@ -7,6 +7,9 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: () => import('../views/HomeView.vue'),
+      meta: {
+        title: 'Xem tất cả trực tuyến và miễn phí!'
+      }
     },
     {
       path: '/login',

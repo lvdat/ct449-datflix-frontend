@@ -1,9 +1,9 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top main__nav">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <router-link class="navbar-brand" to="/">
                 <b>PHIMMOIZZ</b>
-            </a>
+            </router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -20,7 +20,8 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
+                        <img src="@/assets/logo.svg" alt="Logo" width="24" height="24" class="d-inline-block align-text-top main__nav--avatar">
+                        Hi, levandat
                     </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -36,10 +37,10 @@
             </form>
             <ul class="ml-auto navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Đăng nhập</a>
+                    <router-link class="nav-link" to="/login">Đăng nhập</router-link>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tạo tài khoản</a>
+                    <router-link class="nav-link" to="/signup">Tạo tài khoản</router-link>
                 </li>
             </ul>
             
@@ -61,6 +62,11 @@ export default {
 .main__nav {
     padding: 13px;
     background-color: rgb(20, 20, 20);
+}
+.main__nav--avatar {
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 1px solid red;
 }
 .nav-link {
     color: #fff;

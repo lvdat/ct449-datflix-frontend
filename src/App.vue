@@ -1,6 +1,7 @@
 <script setup>
 import 'bootstrap'
 import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 </script>
 
 <template>
@@ -14,8 +15,21 @@ import Header from './components/Header.vue'
       </div>
     </div>
   </div>
+  <Footer />
 </template>
-
+<script>
+export default {
+  name: 'App',
+  watch: {
+    $route: {
+      immediate: true,
+      handler (to, from) {
+        document.title = to.meta.title + ' - PHIMMOIZZ' || 'PHIMMOIZZ - Xem phim online miễn phí'
+      }
+    }
+  }
+}
+</script>
 <style scoped>
 
 </style>

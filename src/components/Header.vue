@@ -36,13 +36,13 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="@/assets/logo.svg" alt="Logo" width="24" height="24" class="d-inline-block align-text-top main__nav--avatar">
-                            Hi, levandat
+                            Hi, {{ username }}
                         </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Trang cá nhân</a></li>
                         <li><a class="dropdown-item" href="#">Cài đặt tài khoản</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                        <li><a class="dropdown-item" @click="logOut">Đăng xuất</a></li>
                     </ul>
                 </li>
                 </template>
@@ -59,7 +59,8 @@ export default {
         return {
             search: '',
             logged: false,
-            user: null,
+            username: '',
+            avatar: '',
         }
     },
     methods: {
@@ -67,17 +68,27 @@ export default {
             const authStore = useAuthStore()
             if(authStore.isAuthenticated) {
                 this.logged = true
-                this.user = {
-                    name: authStore.user.name,
-                    avatar: authStore.user.avatar
-                }
+                this.username = authStore.username
+                this.avatar = authStore.avatar
             } else {
                 this.logged = false
                 this.user = null
             }
+        },
+        logOut() {
+            const authStore = useAuthStore()
+            authStore.logout()
+            this.logged = false
+            this.user = null
+            this.$swal({
+                title: "Đã đăng xuất khỏi PHIMMOIZZ",
+                icon: "success",
+                showConfirmButton: true,
+            })
+            this.$route.push('/')
         }
     },
-    mounted() {
+    created() {
         this.checkLogin()
     },
     watch: {

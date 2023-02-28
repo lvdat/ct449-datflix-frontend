@@ -8,18 +8,20 @@ export const useAuthStore = defineStore({
         avatar: useLocalStorage('avatar', null),
     }),
     getters: {
-        isAuthenticated: (state) => !!state.token.value && !!state.username.value,
+        isAuthenticated () {
+            return this.token !== null && this.username !== null && this.avatar !== null
+        }
     },
     actions: {
         login(token, username, avatar) {
-            this.token.value = token
-            this.username.value = username
-            this.avatar.value = avatar
+            this.token = token
+            this.username = username
+            this.avatar = avatar
         },
         logout() {
-            this.token.value = null
-            this.username.value = null
-            this.avatar.value = null
+            this.token = null
+            this.username = null
+            this.avatar = null
         }
     }
 })
